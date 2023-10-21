@@ -51,7 +51,7 @@ if (isset($_GET['aksi'])) {
             ?>
             <div class="col mt-3">
                 <div class="form-input mt-3">
-                    <label for="pasien" class="sr-only">Pasien</label>
+                    <label for="pasien" class="sr-only fw-bold">Pasien</label>
                     <select class="form-control" name="pasien">
                         <option value="" disabled selected>Pilih Pasien</option>
                         <?php
@@ -73,7 +73,7 @@ if (isset($_GET['aksi'])) {
                     </select>
                 </div>
                 <div class="form-input mt-3">
-                    <label for="dokter" class="sr-only">Dokter</label>
+                    <label for="dokter" class="sr-only fw-bold">Dokter</label>
                     <select class="form-control" name="dokter">
                         <option value="" disabled selected>Pilih Dokter</option>
                         <?php
