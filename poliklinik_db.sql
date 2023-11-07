@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 21, 2023 at 09:47 PM
+-- Generation Time: Nov 07, 2023 at 12:10 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -73,16 +73,40 @@ CREATE TABLE `periksa` (
   `id_pasien` int DEFAULT NULL,
   `id_dokter` int UNSIGNED DEFAULT NULL,
   `tgl_periksa` datetime DEFAULT NULL,
-  `catatan` text
+  `catatan` text,
+  `obat` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `periksa`
 --
 
-INSERT INTO `periksa` (`id`, `id_pasien`, `id_dokter`, `tgl_periksa`, `catatan`) VALUES
-(3, 2, 1, '2023-10-12 00:55:00', 'ga sakit'),
-(4, 1, 1, '2023-10-13 01:35:00', 'testtttttttttt');
+INSERT INTO `periksa` (`id`, `id_pasien`, `id_dokter`, `tgl_periksa`, `catatan`, `obat`) VALUES
+(3, 2, 1, '2023-10-12 00:55:00', 'ga sakit', 'paracetamol'),
+(4, 1, 1, '2023-10-13 01:35:00', 'jiwa', 'bius');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`) VALUES
+(15, 'vigorjs', '202cb962ac59075b964b07152d234b70'),
+(16, 'a111912289', '202cb962ac59075b964b07152d234b70'),
+(17, '321', 'caf1a3dfb505ffed0d024130f58c5cfa'),
+(22, 'b111906112', 'caf1a3dfb505ffed0d024130f58c5cfa'),
+(24, 'a11', '11340131feec68e7ca463f960f0f341c');
 
 --
 -- Indexes for dumped tables
@@ -109,6 +133,13 @@ ALTER TABLE `periksa`
   ADD KEY `id_pasien` (`id_pasien`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -129,6 +160,12 @@ ALTER TABLE `pasien`
 --
 ALTER TABLE `periksa`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Constraints for dumped tables
