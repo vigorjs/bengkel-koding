@@ -80,7 +80,7 @@ if (isset($_GET['aksi'])) {
                     <th scope="col">Nama</th>
                     <th scope="col">Alamat</th>
                     <th scope="col">No HP</th>
-                    <th>Action</th>
+                    <th class="d-flex justify-content-center">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -94,7 +94,7 @@ if (isset($_GET['aksi'])) {
                         <td><?php echo $data['nama'] ?></td>
                         <td><?php echo $data['alamat'] ?></td>
                         <td><?php echo $data['no_hp'] ?></td>
-                        <td>
+                        <td class="d-flex justify-content-center">
                             <a class="btn btn-success rounded-pill px-3" href="index.php?page=dokter&id=<?php echo $data['id'] ?>">Ubah</a>
                             <a class="btn btn-danger rounded-pill px-3" href="index.php?page=dokter&id=<?php echo $data['id'] ?>&aksi=hapus">Hapus</a>
                         </td>
